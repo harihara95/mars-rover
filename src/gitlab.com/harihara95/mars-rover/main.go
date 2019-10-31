@@ -1,4 +1,4 @@
-package rover
+package main
 
 import (
 	"fmt"
@@ -8,25 +8,26 @@ import (
 func main() {
 	var roverCount int
 	fmt.Scan(&roverCount)
-	if roverCount > 0
-	for i := 0; i < roverCount; i++ {
-		var roverxCoOrd,roveryCoOrd int
-		var roverDir rune
-		var roverMoves string
+	if roverCount > 0 {
+		for i := 0; i < roverCount; i++ {
+			var roverxCoOrd,roveryCoOrd int
+			var roverDir rune
+			var roverMoves string
 
-		fmt.Scan(&roverxCoOrd)
-		fmt.Scan(&roveryCoOrd)
-		fmt.Scan(&roverDir)
-		fmt.Scan(&roverMoves)
+			fmt.Scan(&roverxCoOrd)
+			fmt.Scan(&roveryCoOrd)
+			fmt.Scan(&roverDir)
+			fmt.Scan(&roverMoves)
 
-		rover := rover.Rover {
-			xCoordinate: roverxCoOrd,
-			yCoordinate: roveryCoOrd,
-			headingDirection: getDirConstant(roverDir).int(),
+			rover := rover.Rover {
+				xCoordinate: roverxCoOrd,
+				yCoordinate: roveryCoOrd,
+				headingDirection: getDirConstant(roverDir).int(),
+			}
+			for move := range rover1Moves {
+				rover.moveRover(move)
+			}
+			fmt.Println(rover.getPosition())
 		}
-		for move := range rover1Moves {
-			rover.moveRover(move)
-		}
-		fmt.Println(rover.getPosition())
 	}
 }
