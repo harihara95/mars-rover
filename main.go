@@ -1,4 +1,4 @@
-package src
+package _go
 
 import (
 	"fmt"
