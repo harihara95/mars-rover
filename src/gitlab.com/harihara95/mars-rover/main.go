@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"gitlab.com/harihara95/mars-rover"
+	"gitlab.com/harihara95/mars-rover/rover"
 	)
 
 func main() {
