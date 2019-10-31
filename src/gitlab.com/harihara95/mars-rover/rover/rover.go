@@ -1,5 +1,7 @@
 package rover
 
+import "strconv"
+
 type Rover struct {
 	xCoordinate   int
 	yCoordinate   int
@@ -50,5 +52,5 @@ func (r Rover) moveRoverToRight() {
 }
 
 func (r Rover) getPosition() string {
-	return string(r.xCoordinate) + " " +string(r.yCoordinate) + string(direction.String(r.headingDirection));
+	return string(r.xCoordinate) + " " +string(r.yCoordinate) + " " + strconv.QuoteRune(directions[r.headingDirection])
 }

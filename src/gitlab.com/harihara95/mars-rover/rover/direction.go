@@ -19,7 +19,7 @@ var directions = [...] rune {
 
 func (d direction) String() rune { return directions[d] }
 
-func (d direction) int() int { return d }
+func (d direction) int() int { return d.int() }
 
 func getDirConstant(d rune) direction {
 	switch d {
