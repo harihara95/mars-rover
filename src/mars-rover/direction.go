@@ -1,4 +1,4 @@
-package rover
+package main
 
 type direction int
 const (
@@ -19,20 +19,20 @@ var directions = [...] rune {
 
 func (d direction) String() rune { return directions[d] }
 
-func (d direction) int() int { return d.int() }
+func (d direction) int() int { return int(d) }
 
-func getDirConstant(d rune) direction {
+func getDirConstant(d string) direction {
 	switch d {
-	case 'N':
+	case "N":
 		return N
 		break
-	case 'S':
+	case "S":
 		return S
 		break
-	case 'W':
+	case "W":
 		return W
 		break
-	case 'E':
+	case "E":
 		return E
 		break
 	}

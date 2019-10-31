@@ -1,6 +1,9 @@
-package rover
+package main
 
-import "strconv"
+import (
+	"fmt"
+	"strconv"
+)
 
 type Rover struct {
 	xCoordinate   int
@@ -8,17 +11,18 @@ type Rover struct {
 	headingDirection  int
 }
 
-func (r Rover) moveRover(move rune) {
-	if move == 'L' || move == 'l' {
+func (r *Rover) moveRover(move rune) {
+
+	if move == 'L'  {
 		r.moveRoverToLeft()
-	} else if move == 'R' || move == 'r' {
+	} else if move == 'R' {
 		r.moveRoverToRight()
-	} else if move == 'M' || move == 'm' {
+	} else if move == 'M' {
 		r.moveRoverForward()
 	}
 }
 
-func (r Rover) moveRoverForward() {
+func (r *Rover) moveRoverForward() {
 	switch r.headingDirection {
 	case N.int():
 		r.yCoordinate++
@@ -27,15 +31,15 @@ func (r Rover) moveRoverForward() {
 		r.yCoordinate--
 		break
 	case W.int():
-		r.xCoordinate++
+		r.xCoordinate--
 		break
 	case E.int():
-		r.xCoordinate--
+		r.xCoordinate++
 		break
 	}
 }
 
-func (r Rover) moveRoverToLeft() {
+func (r *Rover) moveRoverToLeft() {
 	if r.headingDirection != N.int() {
 		r.headingDirection--
 	} else {
@@ -43,7 +47,7 @@ func (r Rover) moveRoverToLeft() {
 	}
 }
 
-func (r Rover) moveRoverToRight() {
+func (r *Rover) moveRoverToRight() {
 	if r.headingDirection != W.int() {
 		r.headingDirection++
 	} else {
@@ -51,6 +55,11 @@ func (r Rover) moveRoverToRight() {
 	}
 }
 
-func (r Rover) getPosition() string {
-	return string(r.xCoordinate) + " " +string(r.yCoordinate) + " " + strconv.QuoteRune(directions[r.headingDirection])
+func (r Rover) printPosition() {
+
+	fmt.Print(r.xCoordinate)
+	fmt.Print(" ")
+	fmt.Print(r.yCoordinate)
+	fmt.Print(" ")
+	fmt.Print(strconv.QuoteRune(directions[r.headingDirection]))
 }
