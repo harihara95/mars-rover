@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"gitlab.com/harihara95/mars-rover/rover"
-	)
+)
 
 func main() {
 	var roverCount int
@@ -19,12 +19,12 @@ func main() {
 			fmt.Scan(&roverDir)
 			fmt.Scan(&roverMoves)
 
-			rover := rover.Rover {
+			rover :=  rover.Rover{
 				xCoordinate: roverxCoOrd,
 				yCoordinate: roveryCoOrd,
 				headingDirection: getDirConstant(roverDir).int(),
 			}
-			for move := range rover1Moves {
+			for move := range roverMoves {
 				rover.moveRover(move)
 			}
 			fmt.Println(rover.getPosition())
