@@ -1,4 +1,4 @@
-package mars_rover
+package rover
 
 type direction int
 const (

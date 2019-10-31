@@ -1,9 +1,5 @@
 package rover
 
-import (
-	"gitlab.com/harihara95/mars-rover"
-)
-
 type Rover struct {
 	xCoordinate   int
 	yCoordinate   int
