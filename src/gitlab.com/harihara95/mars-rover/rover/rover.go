@@ -1,5 +1,9 @@
 package rover
 
+import (
+	"gitlab.com/harihara95/mars-rover"
+)
+
 type Rover struct {
 	xCoordinate   int
 	yCoordinate   int
@@ -7,7 +11,6 @@ type Rover struct {
 }
 
 func (r Rover) moveRover(move rune) {
-
 	if move == 'L' || move == 'l' {
 		r.moveRoverToLeft()
 	} else if move == 'R' || move == 'r' {
